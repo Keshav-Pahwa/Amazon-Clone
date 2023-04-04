@@ -5,7 +5,8 @@ import { selectItems, selectTotal } from "../slices/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { Currency } from "react-currency-formatter";
 import { useSession } from "next-auth/react";
-import { loadStripe } from '@stripe/stripe-js'
+import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
 
 const stripePromise = loadStripe(process.env.stripe_public_key)
 
@@ -22,7 +23,7 @@ function Checkout() {
 			items: items,
 			email: session.user.email,
 		})
-
+		console.log("hello");
 		const result = await stripe.redirectToCheckout({
 			sessionId: checkoutSession.data.id,
 		})
