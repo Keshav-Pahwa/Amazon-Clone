@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start --openssl-legacy-provider start"
+    "start": "next start"
   },
   "dependencies": {
     "@heroicons/react": "1.0.1",
@@ -17,9 +17,9 @@
     "moment": "^2.29.4",
     "next": "latest",
     "next-auth": "^4.20.1",
-    "react": "^18.2.0",
+    "react": "16.13.0",
     "react-currency-formatter": "^1.1.0",
-    "react-dom": "17.0.1",
+    "react-dom": "16.13.0",
     "react-redux": "7.2.2",
     "react-responsive-carousel": "^3.2.23",
     "stripe": "^11.17.0"
