@@ -10,6 +10,7 @@ const firebaseConfig = {
   };
 
 const app = !firebase.apps.length ? firebase.initialization(firebaseConfig) : firebase.app();
+console.log(firebase.apps.length);
 const b = app.firestore();
 
 export default db; 

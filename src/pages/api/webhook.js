@@ -1,7 +1,7 @@
 import { buffer } from 'micro';
 import * as admin from 'firebase-admin'
 
-console.log("Hello")
+
 // secure a connection to firebase from the backend
 const serviceAccount = require('../../../permissions.json');
 const app = !admin.apps.length ? admin.initializeApp({
@@ -36,7 +36,6 @@ const fulfillOrder = async (session) => {
 
 export default async (req,res) => {
     if (req.method === 'POST'){
-		console.log("Hello in post")
       const requestBuffer = await buffer(req);
       const payload = requestBuffer.toString();
       const sig = req.headers["stripe-signature"];
@@ -45,7 +44,7 @@ export default async (req,res) => {
 
       //verify that the event posted came from stripe
       try{
-          event= stripe.webhooks.constructEvent(payload,sig,endpointSecret);
+          event= stripe.webhooks.constructEvent(payload, sig, endpointSecret);
       }catch(err){
           console.log('ERROR', err.message)
           return res.status(400).send(`Webhook error: ${err.message}`);

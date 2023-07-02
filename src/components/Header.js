@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
 	MenuIcon,
 	SearchIcon,
@@ -41,7 +41,7 @@ function Header() {
 				{/* Right */}
 				<div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
 					<div onClick={!session ? signIn : signOut} className="cursor-pointer link">
-						<p className="hover:uppercase">
+						<p>
 							{session ? `Hello, ${session.user.name}` : 'Sign In'}
 						</p>
 						<p className="font-extrabold md:text-sm">Account & lists</p>

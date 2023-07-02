@@ -6,6 +6,7 @@ import Order from '../components/Order'
 import serviceAccount from '../../permissions.json'
 
 const Orders = ({ orders, session }) => {
+	// console.log(session, " + ", orders);
 	return (
 		<div>
 			<Header />
